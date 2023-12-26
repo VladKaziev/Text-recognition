@@ -4,9 +4,6 @@ import re
 with open('output_response.json', 'r') as file:
     ocr_data = json.load(file)
 
-for block in ocr_data['result']['textAnnotation']['blocks']:
-    for line in block['lines']:
-        print(line)
 def parse_messages(data):
     messages = []
     height_threshold = int(data['result']['textAnnotation']['height']) * 0.1  # Топ 10% картинки игнорируем
